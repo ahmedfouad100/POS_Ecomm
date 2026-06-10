@@ -9,7 +9,7 @@ require("dotenv").config()
 
 const mongoose = require("mongoose")
 
-const Admin = require("../models/Admin")
+const Admin = require("../models/Users.models")
 
 const seedSuperAdmin = async () => {
 
