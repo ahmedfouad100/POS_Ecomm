@@ -9,7 +9,7 @@
 
 const jwt = require("jsonwebtoken")
 
-exports.verifyAdminToken =(res,req,next)=>{
+exports.verifyUserToken =(res,req,next)=>{
     
 try {
 
@@ -29,7 +29,7 @@ try {
     if(!decode) return res.status(400).json({
         msg:"Token is expired or invalid"
     })
-    req.adminInfo = decode;
+    req.userInfo = decode;
     next()
 
 } catch(error){

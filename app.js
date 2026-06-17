@@ -46,6 +46,17 @@ const adminRoutes = require("./routes/auth.route")
 app.use("/api/dashboard",adminRoutes)
 // app.use("/api",adminRoutes)
 
+const categoryRoutes = require("./routes/category.route")
+app.use("/api/category",categoryRoutes)
+
+// const couponRoutes = require("./routes/coupon.route")
+// app.use("/api/coupon",adminRoutes)
+
+// const orderRoutes = require("./routes/order.route")
+// app.use("/api/order",adminRoutes)
+
+// const productRoutes = require("./routes/product.route")
+// app.use("/api/product",adminRoutes)
 
 // init socket server => 1
 const {Server} = require("socket.io")

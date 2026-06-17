@@ -7,10 +7,18 @@
 const Joi = require("joi")
 
 // Joi Schema
-const loginSchema = Joi.object({
-    email:Joi.string().email().required(),
-    password:Joi.string().min(6).required(),
-    username:Joi.string()
+const loginValidator = Joi.object({
+    email: Joi.string().email().required(),
+    password: Joi.string().min(6).required(),
 })
 
-module.exports = loginSchema
+const registerValidator = Joi.object({
+    username:Joi.string().min(4).max(20),
+    email: Joi.string().email().required(),
+    password: Joi.string().min(6).required(),
+    role:Joi.string(),
+    loyalPts:Joi.number(),
+    avatar:Joi.string(),
+})
+
+module.exports = { loginValidator, registerValidator }

@@ -26,6 +26,13 @@ const usersSchema = new mongoose.Schema({
         default: "user",
         required:true,
     },
+    loyalPts: {
+        type:Number,
+        default:0,
+    },
+    avatar: {
+        type:String
+    }
 }, { timestamps: true })
 
 usersSchema.pre("save", async function (next) {   // or async ()=>  arrow function handles next automatically but doesn't handle this

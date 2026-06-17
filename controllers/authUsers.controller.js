@@ -7,7 +7,7 @@
 // Users 
 const Users = require("../models/Users.models")
 
-const loginSchema = require("./validation/authUsersValidation")
+// const {loginSchema,registerSchema} = require("./validation/authUsersValidation")
 
 const jwt = require("jsonwebtoken")
 
@@ -15,17 +15,18 @@ const jwt = require("jsonwebtoken")
 const loginController = async(req,res)=>{
     try{
         // joi validation
-        const {error,value} = loginSchema.validate(req.body,{
-            abortEarly:false,
-            stripeUnknown:true
-        })
-        if(error) return res.status(400).json({
-            msg: error.details.map((err)=>err.message),
-        })
+        // const {error,value} = loginSchema.validate(req.body,{
+        //     abortEarly:false,
+        //     stripeUnknown:true
+        // })
+        // if(error) return res.status(400).json({
+        //     msg: error.details.map((err)=>err.message),
+        // })
 
         // check user
         // get data from value
-        const {email,password} = value ;
+        // const {email,password} = value ;
+        const {email,password} = req.body ;
         // check Users found or not
         const user = await Users.findOne({email}).select("+password") // findOne({email:value.email}) email=> from db : value.email // +password => password select in schema is false, +password make it select true
         if(!user) return res.status(400).json({
@@ -54,13 +55,13 @@ const loginController = async(req,res)=>{
 const registerController = async(req,res)=>{
     try{
         // joi validation
-        const {error,value} = loginSchema.validate(req.body,{
-            abortEarly:false,
-            stripeUnknown:true
-        })
-        if(error) return res.status(400).json({
-            msg: error.details.map((err)=>err.message),
-        })
+        // const {error,value} = registerSchema.validate(req.body,{
+        //     abortEarly:false,
+        //     stripeUnknown:true
+        // })
+        // if(error) return res.status(400).json({
+        //     msg: error.details.map((err)=>err.message),
+        // })
 
         // check user
         // get data from value
