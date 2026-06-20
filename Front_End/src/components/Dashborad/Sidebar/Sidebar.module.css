@@ -1,0 +1,19 @@
+.sidebar {
+    background-color: var(--main-color);
+    color: var(--white-color);
+}
+
+.navItem {
+    cursor: pointer;
+    transition: all 0.5s;
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.navItem:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    color: var(--main-color)
+}
+
+/* .active in th index.css */
