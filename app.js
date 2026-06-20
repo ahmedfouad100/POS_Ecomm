@@ -49,14 +49,14 @@ app.use("/api/dashboard",adminRoutes)
 const categoryRoutes = require("./routes/category.route")
 app.use("/api/category",categoryRoutes)
 
-// const couponRoutes = require("./routes/coupon.route")
-// app.use("/api/coupon",adminRoutes)
+const productRoutes = require("./routes/product.route")
+app.use("/api/product",productRoutes)
 
-// const orderRoutes = require("./routes/order.route")
-// app.use("/api/order",adminRoutes)
+const couponRoutes = require("./routes/coupon.route")
+app.use("/api/coupon",couponRoutes)
 
-// const productRoutes = require("./routes/product.route")
-// app.use("/api/product",adminRoutes)
+const orderRoutes = require("./routes/order.route")
+app.use("/api/order",orderRoutes)
 
 // init socket server => 1
 const {Server} = require("socket.io")

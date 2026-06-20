@@ -2,13 +2,13 @@ const Joi = require("joi")
 
 // Joi Schema
 const productValidator = Joi.object({
-    posId:Joi.Number().required(),
+    posId:Joi.number().required(),
     name:Joi.string().required(),
     description:Joi.string(),
-    price:Joi.Number(),
+    price:Joi.number(),
     image:Joi.string(),
     categoryId:Joi.string(),
-    bonusPts:Joi.Number(),
+    bonusPts:Joi.number(),
 })
 
 module.exports = {productValidator}

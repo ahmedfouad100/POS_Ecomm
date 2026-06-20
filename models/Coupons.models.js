@@ -4,7 +4,7 @@ const couponsSchema = mongoose.Schema({
     name:{type:String,trim:true},
     description:{type:String},
     discountType:{type:String,enum:["%","fixed"]},
-    discountValue:{type:number},
+    discountValue:{type:Number},
     duration:{type:Date},
     used:{type:Boolean,default:false},
 },{timestamps:true});
